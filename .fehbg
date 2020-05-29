@@ -1,1 +1,2 @@
 #!/bin/sh
+'feh' '--bg-scale' '/home/arthur/Pictures/akira-end.png' 
