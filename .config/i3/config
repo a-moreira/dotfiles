@@ -164,6 +164,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 exec --no-startup-id i3-battery-popup -n
 
 # wallpaper
-exec feh --bg-scale /home/arthur/Pictures/akira-end.png
+exec feh --bg-scale $HOME/Pictures/Wallpaper.png
 
 
