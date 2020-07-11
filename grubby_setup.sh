@@ -2,7 +2,7 @@
 
 dotfiles=(".vimrc" ".gitconfig" ".fehbg" ".profile" ".bashrc" ".config/i3/config")
 
-dir="${HOME}/Projects/dotfiles"
+dir="${HOME}/Projects/dotfiles/grubby/"
 
 for dotfile in "${dotfiles[@]}"; do
     ln -s -f  "${dir}/${dotfile}" "$HOME/"
