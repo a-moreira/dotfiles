@@ -1,2 +1,2 @@
 #!/bin/sh
-#'feh' '--bg-scale' '$HOME/Pictures/wallpaper0.png' 
+'feh' '--bg-scale' '/home/arthur/Pictures/kiitos.jpg' 
