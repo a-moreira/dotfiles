@@ -1,6 +1,6 @@
-#include <X11/XF86keysym.h>
-
 /* See LICENSE file for copyright and license details. */
+
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -18,6 +18,11 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeStatus]  = { col_gray3, col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { col_gray4, col_cyan,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { col_gray3, col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]  = { col_gray4, col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
@@ -65,7 +70,6 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *mutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
-
 static const char *brupcmd[] = { "sudo", "exec", "brightnessctl", "-c", "backlight", "set", "700+", NULL };
 static const char *brdowncmd[] = { "sudo", "exec", "brightnessctl", "-c", "backlight", "set", "-700", NULL };
 
@@ -104,12 +108,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
-
+    
     { 0, XF86XK_AudioMute, spawn, {.v = mutecmd } },
     { 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
     { 0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
     { MODKEY|ShiftMask, XK_Up, spawn, {.v = brupcmd} },
-    { MODKEY|ShiftMask, XK_Down, spawn, {.v = brdowncmd} } 
+    { MODKEY|ShiftMask, XK_Down, spawn, {.v = brdowncmd} }
 };
 
 /* button definitions */
@@ -128,3 +132,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
