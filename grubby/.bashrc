@@ -84,6 +84,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 
     alias diff='diff --color'
+    alias rm='rm -i'
 fi
 
 # colored GCC warnings and errors
